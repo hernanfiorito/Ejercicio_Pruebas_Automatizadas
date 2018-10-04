@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import javax.inject.Inject;
 
 @Repository("usuarioRepository")
-public class RepositorioUsuarioImpl implements RepositorioUsuario {
+public class RepositorioUsuarioHibernate implements RepositorioUsuario {
 
 	@Inject
     private SessionFactory sessionFactory;
