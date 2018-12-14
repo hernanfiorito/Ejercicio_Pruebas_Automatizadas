@@ -26,3 +26,5 @@ hs_err_pid*
 registrarme.iml
 target/**
 /target/
+ENV
+ENV.sh
