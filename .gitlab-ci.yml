@@ -17,3 +17,7 @@ construir-y-probar:
     paths:
       - target/registrarme-*.war
       - target/generated-report
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
