@@ -1,0 +1,19 @@
+image: markhobson/maven-chrome:jdk-8
+
+cache:
+  paths:
+    - .m2/repository
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+
+stages:
+  - construir-y-probar
+
+construir-y-probar:
+  stage: construir-y-probar
+  script: mvn clean verify
+  artifacts:
+    paths:
+      - target/registrarme-*.war
+      - target/generated-report
