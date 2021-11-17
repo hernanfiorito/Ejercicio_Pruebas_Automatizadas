@@ -33,11 +33,6 @@ public class ControladorRegistrarme {
             model.put("error", "El formato del usuario no es una direccion de email válida");
             return new ModelAndView("nuevo-usuario", model);
         }
-        if (usuario.getPassword().length() < 5) {
-            model.put("error", "La contraseña debe tener al menos 5 caracteres");
-            return new ModelAndView("nuevo-usuario", model);
-        }
-
         try{
             servicio.registrar(usuario);
         } catch (UsuarioExistente e){

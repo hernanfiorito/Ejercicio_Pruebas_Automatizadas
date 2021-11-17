@@ -20,7 +20,6 @@ public class ControladorRegistrarmeTest {
     public void init(){
         usuarioMock = mock(Usuario.class);
         when(usuarioMock.getEmail()).thenReturn("mail@usuario.com");
-        when(usuarioMock.getPassword()).thenReturn("12345");
         servicioMock = mock(ServicioUsuario.class);
         controlador.setServicio(servicioMock);
     }
