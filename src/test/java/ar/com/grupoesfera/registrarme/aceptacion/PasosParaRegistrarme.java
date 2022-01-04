@@ -6,8 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
 
     private final AdaptadorParaRegistrarme adaptador;
@@ -51,5 +49,4 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     public void redirigeA(String vista){
         adaptador.redirigeA(vista);
     }
-
 }
