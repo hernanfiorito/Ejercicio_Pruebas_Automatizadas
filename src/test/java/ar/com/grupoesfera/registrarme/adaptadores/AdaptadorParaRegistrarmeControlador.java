@@ -38,22 +38,10 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         registrarme(email);
     }
 
-    public void ingresoA(String path){
-
-        if ( path.equals( "nuevo-usuario") ){
-            controlador.nuevoUsuario();
-        }
-//        seleniumDriver.get(urlBase + "/" + path);
-    }
-
     public void registrarme(String email){
         this.usuario.setEmail(email);
         this.usuario.setPassword(CLAVE_VALIDA);
         modelAndView = controlador.registrarme(this.usuario);
-    }
-
-    public void ingresoUsuario(String email){
-        this.usuario.setEmail(email);
     }
 
     public void ingresoClave(String clave){

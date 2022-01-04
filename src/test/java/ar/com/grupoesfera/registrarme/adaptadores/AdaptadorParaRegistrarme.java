@@ -11,11 +11,7 @@ public interface AdaptadorParaRegistrarme {
 
     void agregarUsuario(String usuario);
 
-    void ingresoA(String path);
-
     void registrarme(String usuario);
-
-    void ingresoUsuario(String usuario);
 
     void ingresoClave(String clave);
 

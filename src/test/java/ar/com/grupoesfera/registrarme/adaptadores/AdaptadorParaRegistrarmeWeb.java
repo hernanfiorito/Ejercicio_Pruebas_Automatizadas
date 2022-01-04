@@ -46,13 +46,6 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
         registrarme(usuario);
     }
 
-    public void ingresoA(String path){
-        seleniumDriver.get(urlBase + "/" + path);
-    }
-
-    public void ingresoUsuario(String usuario){
-        seleniumDriver.findElement(By.id("email")).sendKeys(usuario);
-    }
     public void ingresoClave(String clave){
         seleniumDriver.findElement(By.id("password")).sendKeys(clave);
     }
