@@ -13,7 +13,7 @@ public interface AdaptadorParaRegistrarme {
 
     void ingresoA(String path);
 
-    void registrarme();
+    void registrarme(String usuario);
 
     void ingresoUsuario(String usuario);
 

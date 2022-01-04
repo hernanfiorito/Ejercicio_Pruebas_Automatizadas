@@ -43,10 +43,7 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
     }
 
     public void agregarUsuario(String usuario){
-        seleniumDriver.get(urlBase + "/nuevo-usuario");
-        seleniumDriver.findElement(By.id("email")).sendKeys(usuario);
-        seleniumDriver.findElement(By.id("password")).sendKeys(CLAVE_VALIDA);
-        seleniumDriver.findElement(By.id("btn-registrarme")).click();
+        registrarme(usuario);
     }
 
     public void ingresoA(String path){
@@ -59,7 +56,10 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
     public void ingresoClave(String clave){
         seleniumDriver.findElement(By.id("password")).sendKeys(clave);
     }
-    public void registrarme(){
+    public void registrarme(String usuario){
+        seleniumDriver.get(urlBase + "/nuevo-usuario");
+        seleniumDriver.findElement(By.id("email")).sendKeys(usuario);
+        seleniumDriver.findElement(By.id("password")).sendKeys(CLAVE_VALIDA);
         seleniumDriver.findElement(By.id("btn-registrarme")).click();
     }
 

@@ -35,10 +35,7 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
     }
 
     public void agregarUsuario(String email){
-
-        this.usuario.setEmail(email);
-        this.usuario.setPassword(CLAVE_VALIDA);
-        controlador.registrarme(this.usuario);
+        registrarme(email);
     }
 
     public void ingresoA(String path){
@@ -49,8 +46,10 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
 //        seleniumDriver.get(urlBase + "/" + path);
     }
 
-    public void registrarme(){
-        modelAndView = controlador.registrarme(usuario);
+    public void registrarme(String email){
+        this.usuario.setEmail(email);
+        this.usuario.setPassword(CLAVE_VALIDA);
+        modelAndView = controlador.registrarme(this.usuario);
     }
 
     public void ingresoUsuario(String email){
@@ -72,7 +71,6 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
     }
 
     public void redirigeA(String vista){
-        System.out.println( "Error: " + modelAndView.getModel().get("error") );
         assertThat(modelAndView.getViewName()).contains(vista);
     }
 }

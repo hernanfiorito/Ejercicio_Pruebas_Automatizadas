@@ -29,17 +29,9 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     @When("ingreso a {}")
     public void ingresoA(String path){  adaptador.ingresoA(path);    }
 
-    @When("intento registrarme")
-    public void registrarme(){
-        adaptador.registrarme();
-    }
-
     @When("intento registrarme como {}")
     public void registrarme(String usuario){
-        adaptador.ingresoA("nuevo-usuario");
-        adaptador.ingresoUsuario(usuario);
-        adaptador.ingresoClave(AdaptadorParaRegistrarme.CLAVE_VALIDA);
-        adaptador.registrarme();
+        adaptador.registrarme(usuario);
     }
 
     @And("ingreso el usuario {}")
