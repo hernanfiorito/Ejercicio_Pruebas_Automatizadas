@@ -19,7 +19,7 @@ public interface AdaptadorParaRegistrarme {
 
     void usuarioNoSeCrea();
 
-    void vuelveARegistro(String mensaje);
+    void muestraMensaje(String mensaje);
 
-    void redirigeA(String vista);
+    void meEncuentroEn(String vista);
 }

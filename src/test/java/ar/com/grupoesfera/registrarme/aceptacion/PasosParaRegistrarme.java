@@ -41,12 +41,12 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     public void usuarioNoSeCrea(){ adaptador.usuarioNoSeCrea();     }
 
     @And("muestra el mensaje '{}'")
-    public void vuelveARegistro(String mensaje){
-        adaptador.vuelveARegistro(mensaje);
+    public void muestraMensaje(String mensaje){
+        adaptador.muestraMensaje(mensaje);
     }
 
-    @And("me redirige a la vista {}")
-    public void redirigeA(String vista){
-        adaptador.redirigeA(vista);
+    @And("me encuentro en {}")
+    public void meEncuentroEn(String vista){
+        adaptador.meEncuentroEn(vista);
     }
 }

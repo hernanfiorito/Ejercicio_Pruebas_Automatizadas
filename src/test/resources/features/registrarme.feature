@@ -5,12 +5,12 @@ Feature: Registrarme y darme de alta en el sitio
   Scenario: El usuario se registra y queda listo para ingresar
     Given que no existe el usuario maria@maria.com
     When intento registrarme como maria@maria.com
-    Then me redirige a la vista login
+    Then me encuentro en login
 
   Scenario: El usuario no logra registrarse y puede reintentar
     Given que ya existe el usuario pedro@pedro.com
     When intento registrarme como pedro@pedro.com
-    Then me redirige a la vista nuevo-usuario
+    Then me encuentro en nuevo-usuario
       And muestra el mensaje 'El usuario ya existe'
 
   Rule: Solo puede registrarse si el usuario no existe

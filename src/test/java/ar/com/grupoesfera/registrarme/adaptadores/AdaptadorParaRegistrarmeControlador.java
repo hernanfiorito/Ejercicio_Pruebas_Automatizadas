@@ -54,11 +54,11 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
 
     public void usuarioNoSeCrea(){}
 
-    public void vuelveARegistro(String mensaje){
+    public void muestraMensaje(String mensaje){
         assertThat(modelAndView.getModel().get("error")).isEqualTo(mensaje);
     }
 
-    public void redirigeA(String vista){
+    public void meEncuentroEn(String vista){
         assertThat(modelAndView.getViewName()).contains(vista);
     }
 }
