@@ -1,10 +1,10 @@
 package ar.com.grupoesfera.registrarme.aceptacion;
 
 import ar.com.grupoesfera.registrarme.adaptadores.AdaptadorParaRegistrarme;
-import cucumber.api.java.en.And;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -16,17 +16,17 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
         this.adaptador = adaptador;
     }
 
-    @Given("que no existe el usuario (.*)")
+    @Given("que no existe el usuario {}")
     public void noExiteUsuario(String usuario){
         adaptador.noExiteUsuario(usuario);
     }
 
-    @Given("que ya existe el usuario (.*) con clave (.*)")
+    @Given("que ya existe el usuario {} con clave {}")
     public void ingresoUsuarioDuplicado(String usuario, String clave){
         adaptador.ingresoUsuarioDuplicado(usuario,clave);
     }
 
-    @When("ingreso a (.*)")
+    @When("ingreso a {}")
     public void ingresoA(String path){  adaptador.ingresoA(path);    }
 
     @When("intento registrarme")
@@ -34,12 +34,12 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
         adaptador.registrarme();
     }
 
-    @And("ingreso el usuario (.*)")
+    @And("ingreso el usuario {}")
     public void ingresoUsuario(String usuario){
         adaptador.ingresoUsuario(usuario);
     }
 
-    @And("ingreso la clave (.*)")
+    @And("ingreso la clave {}")
     public void ingresoClave(String clave){
         adaptador.ingresoClave(clave);
     }
@@ -50,12 +50,12 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     @Then("el usuario NO se crea")
     public void usuarioNoSeCrea(){ adaptador.usuarioNoSeCrea();     }
 
-    @And("muestra el mensaje '(.*)'")
+    @And("muestra el mensaje '{}'")
     public void vuelveARegistro(String mensaje){
         adaptador.vuelveARegistro(mensaje);
     }
 
-    @And("me redirige a la vista (.*)")
+    @And("me redirige a la vista {}")
     public void redirigeA(String vista){
         adaptador.redirigeA(vista);
     }
