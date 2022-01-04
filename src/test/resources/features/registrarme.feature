@@ -30,13 +30,3 @@ Feature: Registrarme y darme de alta en el sitio
     Then el usuario NO se crea
       And me redirige a la vista nuevo-usuario
       And muestra el mensaje 'El formato del usuario no es una direccion de email válida'
-
-  Scenario: Si el formato de usuario es incorrecto NO se da de alta y vuelve a la vista de registro
-  Given
-    When ingreso a nuevo-usuario
-    And ingreso el usuario pedro.com
-    And ingreso la clave 1234
-    And intento registrarme
-    Then el usuario NO se crea
-    And me redirige a la vista nuevo-usuario
-    And muestra el mensaje 'El formato del usuario no es una direccion de email válida'
