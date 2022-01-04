@@ -30,7 +30,7 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         usuario.setEmail("mail@usuario.com");
     }
 
-    public void noExiteUsuario(String usuario){
+    public void noExisteUsuario(String usuario){
         // no hace nada
     }
 

@@ -17,8 +17,8 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     }
 
     @Given("que no existe el usuario {}")
-    public void noExiteUsuario(String usuario){
-        adaptador.noExiteUsuario(usuario);
+    public void noExisteUsuario(String usuario){
+        adaptador.noExisteUsuario(usuario);
     }
 
     @Given("que ya existe el usuario {}")

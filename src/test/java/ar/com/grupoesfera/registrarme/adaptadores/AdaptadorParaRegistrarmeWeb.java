@@ -38,7 +38,7 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
         seleniumDriver = new ChromeDriver();
     }
 
-    public void noExiteUsuario(String usuario){
+    public void noExisteUsuario(String usuario){
         // no hace nada
     }
 
