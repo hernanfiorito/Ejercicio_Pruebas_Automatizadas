@@ -8,7 +8,7 @@ Feature: Registrarme y darme de alta en el sitio
     Then me redirige a la vista login
 
   Scenario: El usuario no logra registrarse y puede reintentar
-    Given que ya existe el usuario pedro@pedro.com con clave 1234
+    Given que ya existe el usuario pedro@pedro.com
     When intento registrarme como pedro@pedro.com
     Then me redirige a la vista nuevo-usuario
       And muestra el mensaje 'El usuario ya existe'
@@ -21,7 +21,7 @@ Feature: Registrarme y darme de alta en el sitio
       Then el usuario se crea
 
     Scenario: Si el usuario ya existe en el sitio, no se da de alta
-      Given que ya existe el usuario pedro@pedro.com con clave 1234
+      Given que ya existe el usuario pedro@pedro.com
       When intento registrarme como pedro@pedro.com
       Then el usuario NO se crea
         And muestra el mensaje 'El usuario ya existe'

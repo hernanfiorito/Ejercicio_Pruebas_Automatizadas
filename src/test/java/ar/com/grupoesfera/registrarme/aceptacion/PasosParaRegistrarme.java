@@ -21,9 +21,9 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
         adaptador.noExiteUsuario(usuario);
     }
 
-    @Given("que ya existe el usuario {} con clave {}")
-    public void ingresoUsuarioDuplicado(String usuario, String clave){
-        adaptador.ingresoUsuarioDuplicado(usuario,clave);
+    @Given("que ya existe el usuario {}")
+    public void ingresoUsuarioDuplicado(String usuario){
+        adaptador.ingresoUsuarioDuplicado(usuario);
     }
 
     @When("ingreso a {}")

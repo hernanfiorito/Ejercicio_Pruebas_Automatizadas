@@ -7,7 +7,7 @@ public interface AdaptadorParaRegistrarme {
 
     void noExiteUsuario(String usuario);
 
-    void ingresoUsuarioDuplicado(String usuario, String clave);
+    void ingresoUsuarioDuplicado(String usuario);
 
     void ingresoA(String path);
 
