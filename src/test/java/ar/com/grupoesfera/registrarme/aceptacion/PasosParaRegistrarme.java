@@ -38,7 +38,7 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     public void registrarme(String usuario){
         adaptador.ingresoA("nuevo-usuario");
         adaptador.ingresoUsuario(usuario);
-        adaptador.ingresoClave("1234");
+        adaptador.ingresoClave(AdaptadorParaRegistrarme.CLAVE_VALIDA);
         adaptador.registrarme();
     }
 

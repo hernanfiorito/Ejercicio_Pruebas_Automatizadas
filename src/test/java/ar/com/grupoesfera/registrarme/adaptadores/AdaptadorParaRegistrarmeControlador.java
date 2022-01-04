@@ -37,7 +37,7 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
     public void ingresoUsuarioDuplicado(String email){
 
         this.usuario.setEmail(email);
-        this.usuario.setPassword("1234");
+        this.usuario.setPassword(CLAVE_VALIDA);
         controlador.registrarme(this.usuario);
     }
 

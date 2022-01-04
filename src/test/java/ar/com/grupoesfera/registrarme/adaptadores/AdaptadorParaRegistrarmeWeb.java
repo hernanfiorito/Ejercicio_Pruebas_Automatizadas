@@ -45,7 +45,7 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
     public void ingresoUsuarioDuplicado(String usuario){
         seleniumDriver.get(urlBase + "/nuevo-usuario");
         seleniumDriver.findElement(By.id("email")).sendKeys(usuario);
-        seleniumDriver.findElement(By.id("password")).sendKeys("1234");
+        seleniumDriver.findElement(By.id("password")).sendKeys(CLAVE_VALIDA);
         seleniumDriver.findElement(By.id("btn-registrarme")).click();
     }
 

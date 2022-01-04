@@ -5,6 +5,8 @@ package ar.com.grupoesfera.registrarme.adaptadores;
  */
 public interface AdaptadorParaRegistrarme {
 
+    String CLAVE_VALIDA = "1234";
+
     void noExiteUsuario(String usuario);
 
     void ingresoUsuarioDuplicado(String usuario);
