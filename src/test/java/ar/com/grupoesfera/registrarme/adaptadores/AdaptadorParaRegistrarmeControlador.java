@@ -34,7 +34,7 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         // no hace nada
     }
 
-    public void ingresoUsuarioDuplicado(String email){
+    public void agregarUsuario(String email){
 
         this.usuario.setEmail(email);
         this.usuario.setPassword(CLAVE_VALIDA);

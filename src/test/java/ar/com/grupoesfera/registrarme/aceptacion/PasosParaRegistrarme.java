@@ -22,8 +22,8 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     }
 
     @Given("que ya existe el usuario {}")
-    public void ingresoUsuarioDuplicado(String usuario){
-        adaptador.ingresoUsuarioDuplicado(usuario);
+    public void agregarUsuario(String usuario){
+        adaptador.agregarUsuario(usuario);
     }
 
     @When("ingreso a {}")

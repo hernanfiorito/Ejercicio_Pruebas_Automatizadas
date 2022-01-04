@@ -9,7 +9,7 @@ public interface AdaptadorParaRegistrarme {
 
     void noExisteUsuario(String usuario);
 
-    void ingresoUsuarioDuplicado(String usuario);
+    void agregarUsuario(String usuario);
 
     void ingresoA(String path);
 
