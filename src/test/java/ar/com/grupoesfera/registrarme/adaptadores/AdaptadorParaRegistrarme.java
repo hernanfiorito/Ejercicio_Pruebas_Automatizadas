@@ -13,8 +13,6 @@ public interface AdaptadorParaRegistrarme {
 
     void registrarme(String usuario);
 
-    void ingresoClave(String clave);
-
     void usuarioSeCrea();
 
     void usuarioNoSeCrea();

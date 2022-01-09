@@ -29,11 +29,6 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
         adaptador.registrarme(usuario);
     }
 
-    @And("ingreso la clave {}")
-    public void ingresoClave(String clave){
-        adaptador.ingresoClave(clave);
-    }
-
     @Then("el usuario se crea")
     public void usuarioSeCrea(){ adaptador.usuarioSeCrea();     }
 

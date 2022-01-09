@@ -44,10 +44,6 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         modelAndView = controlador.registrarme(this.usuario);
     }
 
-    public void ingresoClave(String clave){
-        this.usuario.setPassword(clave);
-    }
-
     public void usuarioSeCrea() {
         assertThat(servicio.consultarUsuario(usuario).getEmail()).isEqualTo(usuario.getEmail());
     }
