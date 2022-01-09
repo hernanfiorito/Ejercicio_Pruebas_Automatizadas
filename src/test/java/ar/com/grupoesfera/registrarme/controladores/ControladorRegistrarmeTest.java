@@ -1,5 +1,6 @@
 package ar.com.grupoesfera.registrarme.controladores;
 
+import ar.com.grupoesfera.registrarme.adaptadores.AdaptadorParaRegistrarme;
 import ar.com.grupoesfera.registrarme.dominio.Usuario;
 import ar.com.grupoesfera.registrarme.dominio.UsuarioExistente;
 import ar.com.grupoesfera.registrarme.dominio.servicios.ServicioUsuario;
@@ -20,6 +21,7 @@ public class ControladorRegistrarmeTest {
     public void init(){
         usuarioMock = mock(Usuario.class);
         when(usuarioMock.getEmail()).thenReturn("mail@usuario.com");
+        when(usuarioMock.getPassword()).thenReturn(AdaptadorParaRegistrarme.CLAVE_VALIDA);
         servicioMock = mock(ServicioUsuario.class);
         controlador.setServicio(servicioMock);
     }
@@ -58,7 +60,6 @@ public class ControladorRegistrarmeTest {
 
         // validacion
         assertThat(modelAndView.getViewName()).isEqualTo("nuevo-usuario");
-        assertThat(modelAndView.getModel().get("error")).isEqualTo("Error al registrar el nuevo usuario");
     }
 
     @Test
