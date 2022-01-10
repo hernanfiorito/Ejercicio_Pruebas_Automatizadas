@@ -55,7 +55,7 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
 
     public void usuarioSeCrea(){}
 
-    public void usuarioNoSeCrea(){}
+    public void usuarioNoEstaRegistrado(){}
 
     public void muestraMensaje(String mensaje){
         assertThat(seleniumDriver.getPageSource()).contains(mensaje);

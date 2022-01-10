@@ -32,8 +32,8 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     @Then("el usuario se crea")
     public void usuarioSeCrea(){ adaptador.usuarioSeCrea();     }
 
-    @Then("el usuario NO se crea")
-    public void usuarioNoSeCrea(){ adaptador.usuarioNoSeCrea();     }
+    @Then("el usuario no está registrado")
+    public void usuarioNoEstaRegistrado(){ adaptador.usuarioNoEstaRegistrado();     }
 
     @And("muestra el mensaje '{}'")
     public void muestraMensaje(String mensaje){

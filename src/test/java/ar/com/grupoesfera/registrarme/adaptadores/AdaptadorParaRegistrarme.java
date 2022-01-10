@@ -15,7 +15,7 @@ public interface AdaptadorParaRegistrarme {
 
     void usuarioSeCrea();
 
-    void usuarioNoSeCrea();
+    void usuarioNoEstaRegistrado();
 
     void muestraMensaje(String mensaje);
 

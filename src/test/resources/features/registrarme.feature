@@ -23,13 +23,12 @@ Feature: Registrarme y darme de alta en el sitio
     Scenario: Si el usuario ya existe en el sitio, no se da de alta
       Given que ya existe el usuario pedro@pedro.com
       When intento registrarme como pedro@pedro.com
-      Then el usuario NO se crea
-        And muestra el mensaje 'El usuario ya existe'
+      Then muestra el mensaje 'El usuario ya existe'
 
   Rule: El usuario debe ser un email con formato válido
 
     Scenario: Si el formato de usuario es incorrecto no se da de alta
       Given
       When intento registrarme como pedro.com
-      Then el usuario NO se crea
+      Then el usuario no está registrado
         And muestra el mensaje 'El formato del usuario no es una direccion de email válida'

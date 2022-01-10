@@ -48,7 +48,14 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         assertThat(servicio.consultarUsuario(usuario).getEmail()).isEqualTo(usuario.getEmail());
     }
 
-    public void usuarioNoSeCrea(){}
+    public void usuarioNoEstaRegistrado(){
+        Usuario usuarioBuscado = null;
+        try{
+            usuarioBuscado = servicio.consultarUsuario(this.usuario);
+        }
+        catch (Exception e){}
+        assertThat(usuarioBuscado).isNull();
+    }
 
     public void muestraMensaje(String mensaje){
         assertThat(modelAndView.getModel().get("error")).isEqualTo(mensaje);
