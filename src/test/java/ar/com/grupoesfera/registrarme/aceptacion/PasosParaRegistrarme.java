@@ -1,6 +1,7 @@
 package ar.com.grupoesfera.registrarme.aceptacion;
 
 import ar.com.grupoesfera.registrarme.adaptadores.AdaptadorParaRegistrarme;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,11 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
 
     public PasosParaRegistrarme(AdaptadorParaRegistrarme adaptador ){
         this.adaptador = adaptador;
+    }
+
+    @Before
+    public void borrarRepositorio() {
+        this.adaptador.borrarRepositorio();
     }
 
     @Given("que no existe el usuario {}")

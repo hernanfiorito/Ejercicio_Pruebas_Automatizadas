@@ -31,4 +31,8 @@ public class RepositorioUsuarioEnMemoria implements RepositorioUsuario {
     public void guardar(Usuario usuario) {
         usuarios.put(usuario.getEmail(), usuario);
     }
+
+    public void vaciar(){
+        usuarios.clear();
+    }
 }

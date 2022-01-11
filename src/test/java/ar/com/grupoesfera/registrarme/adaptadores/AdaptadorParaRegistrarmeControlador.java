@@ -16,12 +16,13 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
 
     private ServicioUsuarioImpl servicio = new ServicioUsuarioImpl();
 
+    private RepositorioUsuarioEnMemoria repositorioUsuario = new RepositorioUsuarioEnMemoria();
+
     private Usuario usuario;
 
     private ModelAndView modelAndView;
 
     public AdaptadorParaRegistrarmeControlador(){
-        RepositorioUsuario repositorioUsuario = new RepositorioUsuarioEnMemoria();
         servicio.setRepositorioUsuario( repositorioUsuario );
         servicio.setServicioMail(new ServicioMailImpl());
         controlador.setServicio( servicio );
@@ -63,5 +64,10 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
 
     public void meEncuentroEn(String vista){
         assertThat(modelAndView.getViewName()).contains(vista);
+    }
+
+    @Override
+    public void borrarRepositorio() {
+        repositorioUsuario.vaciar();
     }
 }

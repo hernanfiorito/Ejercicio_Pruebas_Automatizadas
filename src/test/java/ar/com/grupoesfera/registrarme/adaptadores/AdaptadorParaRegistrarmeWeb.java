@@ -24,6 +24,9 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
         seleniumDriver.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
     }
 
+    @Override
+    public void borrarRepositorio() {}
+
     @After
     public void tearDown(){
         seleniumDriver.close();

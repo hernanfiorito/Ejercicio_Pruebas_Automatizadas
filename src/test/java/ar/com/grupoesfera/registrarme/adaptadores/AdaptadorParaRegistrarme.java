@@ -20,4 +20,6 @@ public interface AdaptadorParaRegistrarme {
     void muestraMensaje(String mensaje);
 
     void meEncuentroEn(String vista);
+
+    void borrarRepositorio();
 }
