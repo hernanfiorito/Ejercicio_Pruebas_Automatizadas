@@ -31,8 +31,8 @@ public class PasosParaRegistrarme implements AdaptadorParaRegistrarme {
     }
 
     @When("intento registrarme como {}")
-    public void registrarme(String usuario){
-        adaptador.registrarme(usuario);
+    public void registrarmeConUsuario(String usuario){
+        adaptador.registrarmeConUsuario(usuario);
     }
 
     @And("intento registrarme con clave {}")

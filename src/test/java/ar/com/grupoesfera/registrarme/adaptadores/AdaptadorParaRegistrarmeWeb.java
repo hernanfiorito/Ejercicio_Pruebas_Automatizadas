@@ -46,19 +46,20 @@ public class AdaptadorParaRegistrarmeWeb implements AdaptadorParaRegistrarme {
     }
 
     public void agregarUsuario(String usuario){
-        registrarme(usuario);
+        registrarmeConUsuario(usuario);
     }
 
-    public void registrarme(String usuario){
-        seleniumDriver.get(urlBase + "/nuevo-usuario");
-        seleniumDriver.findElement(By.id("email")).sendKeys(usuario);
-        seleniumDriver.findElement(By.id("password")).sendKeys(CLAVE_VALIDA);
-        seleniumDriver.findElement(By.id("btn-registrarme")).click();
+    public void registrarmeConUsuario(String usuario){
+        registrarme(usuario, CLAVE_VALIDA);
     }
 
     public void registrarmeConClave(String clave){
+        registrarme(AdaptadorParaRegistrarme.EMAIL_VALIDO, clave);
+    }
+
+    private void registrarme(String email, String clave) {
         seleniumDriver.get(urlBase + "/nuevo-usuario");
-        seleniumDriver.findElement(By.id("email")).sendKeys("mail@usuario.com");
+        seleniumDriver.findElement(By.id("email")).sendKeys(email);
         seleniumDriver.findElement(By.id("password")).sendKeys(clave);
         seleniumDriver.findElement(By.id("btn-registrarme")).click();
     }

@@ -2,7 +2,6 @@ package ar.com.grupoesfera.registrarme.adaptadores;
 
 import ar.com.grupoesfera.registrarme.controladores.ControladorRegistrarme;
 import ar.com.grupoesfera.registrarme.dominio.Usuario;
-import ar.com.grupoesfera.registrarme.dominio.RepositorioUsuario;
 import ar.com.grupoesfera.registrarme.dominio.servicios.ServicioMailImpl;
 import ar.com.grupoesfera.registrarme.dominio.servicios.ServicioUsuarioImpl;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,7 +27,7 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
         controlador.setServicio( servicio );
 
         usuario = new Usuario();
-        usuario.setEmail("mail@usuario.com");
+        usuario.setEmail(EMAIL_VALIDO);
     }
 
     public void noExisteUsuario(String usuario){
@@ -36,16 +35,19 @@ public class AdaptadorParaRegistrarmeControlador implements AdaptadorParaRegistr
     }
 
     public void agregarUsuario(String email){
-        registrarme(email);
+        registrarmeConUsuario(email);
     }
 
-    public void registrarme(String email){
-        this.usuario.setEmail(email);
-        this.usuario.setPassword(CLAVE_VALIDA);
-        modelAndView = controlador.registrarme(this.usuario);
+    public void registrarmeConUsuario(String email){
+        registrarme(email, CLAVE_VALIDA);
     }
 
     public void registrarmeConClave(String clave){
+        registrarme(EMAIL_VALIDO, clave);
+    }
+
+    private void registrarme(String email, String clave) {
+        this.usuario.setEmail(email);
         this.usuario.setPassword(clave);
         modelAndView = controlador.registrarme(this.usuario);
     }
