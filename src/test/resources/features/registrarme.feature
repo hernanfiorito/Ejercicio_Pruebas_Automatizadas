@@ -32,3 +32,10 @@ Feature: Registrarme y darme de alta en el sitio
       When intento registrarme como pedro.com
       Then el usuario no está registrado
         And muestra el mensaje 'El formato del usuario no es una direccion de email válida'
+
+  Rule: La clave debe tener como mínimo 6 caracteres
+
+    Scenario: Si la clave tiene menos de 6 caracteres, no se registra
+      When intento registrarme con clave 1234
+      Then el usuario no está registrado
+      And  muestra el mensaje 'La clave debe tener como mínimo 6 caracteres'
