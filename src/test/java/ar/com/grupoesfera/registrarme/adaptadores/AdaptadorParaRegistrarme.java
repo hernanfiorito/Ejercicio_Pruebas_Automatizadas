@@ -5,7 +5,7 @@ package ar.com.grupoesfera.registrarme.adaptadores;
  */
 public interface AdaptadorParaRegistrarme {
 
-    String CLAVE_VALIDA = "123456";
+    String CLAVE_VALIDA = "Prueba1234";
     String EMAIL_VALIDO = "mail@usuario.com";
 
     void noExisteUsuario(String usuario);

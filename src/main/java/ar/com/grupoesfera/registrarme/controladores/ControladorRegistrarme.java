@@ -37,6 +37,10 @@ public class ControladorRegistrarme {
             model.put("error", "La clave debe tener como mínimo 6 caracteres");
             return new ModelAndView("nuevo-usuario", model);
         }
+        if(!usuario.getPassword().matches("(.*)(?=.*[A-Z]+)(?=.*[0-9]+)(.*)")){
+            model.put("error", "La clave debe tener al menos 1 caracter en mayúscula y 1 número");
+            return new ModelAndView("nuevo-usuario", model);
+        }
         try{
             servicio.registrar(usuario);
         } catch (UsuarioExistente e){
