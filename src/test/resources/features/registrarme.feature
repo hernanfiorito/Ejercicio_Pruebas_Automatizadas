@@ -33,17 +33,21 @@ Feature: Registrarme y darme de alta en el sitio
       Then el usuario no está registrado
         And muestra el mensaje 'El formato del usuario no es una direccion de email válida'
 
-  Rule: La clave debe tener como mínimo 6 caracteres, 1 caracter en mayúscula y 1 numero
+  Rule: La clave debe tener como mínimo 6 caracteres
 
     Scenario: Si la clave tiene menos de 6 caracteres, no se registra
       When intento registrarme con clave 1234
       Then el usuario no está registrado
       And  muestra el mensaje 'La clave debe tener como mínimo 6 caracteres'
 
+  Rule: La clave debe contener al menos 1 caracter en mayúscula
+
    Scenario: Si la clave no tiene al menos 1 caracter en mayúscula, el usuario NO se da de alta y vuelve a la vista de registro
       When intento registrarme con clave prueba1234
       Then el usuario no está registrado
       And muestra el mensaje 'La clave debe tener al menos 1 caracter en mayúscula y 1 número'
+
+  Rule: La clave debe contener al menos 1 número
 
    Scenario: Si la clave no tiene al menos 1 numero, el usuario NO se da de alta y vuelve a la vista de registro
       When intento registrarme con clave Prueba
